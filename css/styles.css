@@ -63,6 +63,10 @@ h1, h2, h3 {
     color: rgb(93, 68, 68);
     font-size: clamp(1rem, 3.5vw, 1.6rem);
     padding: .5em;
+
+    h2 {
+        font-style: italic;
+    }
 }
 
 .products__grid {
