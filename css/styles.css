@@ -1,0 +1,154 @@
+.grid-container {
+    width: 100%;
+    display: grid;
+    gap: .5em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 5em auto 5em;
+    background-color: rgb(248, 165, 187);
+    grid-template-areas: 
+        "header header header header"
+        "content content content sidebar"
+        "footer footer footer footer"
+    ;
+}
+
+.grid-container header, main, aside, footer {
+    background-color: #f2eced;
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    top: 0;
+    padding-left: 1em;
+    font-size: 1.1rem;
+    position: sticky;    /*Hola :) Gracias por el dato de fixed/sticky, al final decidí dejar solamente el de sticky para que el header se desplace por la página*/
+}
+
+.header__nav {
+    width: 380px;
+    color: rgb(225, 95, 117);    
+}
+
+.header__logo {
+    height: 4.5em;
+    padding: 1em;
+}
+
+a:visited {
+    color: rgb(182, 99, 113);    
+}
+
+a:hover {
+    color: hotpink;
+  }
+
+a {
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+body {
+    background-color: rgb(248, 165, 187);
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.content {
+    grid-area: content;
+    color: rgb(93, 68, 68);
+    font-size: clamp(1rem, 3.5vw, 1.6rem);
+    padding: .5em;
+}
+
+.products__grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.products__img {
+    width: 14em;
+    border-radius: 1.5em;
+    margin: .25em;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    color: rgb(93, 68, 68);
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    text-align: justify;
+    padding: .5em;
+}
+
+.sidebar__img {
+    width: 14em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+}
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer__img {
+    width: 3em;
+}
+
+
+
+@media screen and (max-width: 50em) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 5em auto auto 5em;
+        grid-template-areas: 
+            "header"
+            "content"
+            "sidebar"
+            "footer"
+        ;
+    }
+
+    .header__logo {
+        height: 1em;
+        padding: .5em;
+    }
+
+    .products__img{
+        width: 10em;
+        border-radius: 1.5em;
+        margin: .25em;
+    }
+}
+
+
+
+@media (hover: hover) {
+    button:hover {
+        color: hotpink;
+    }
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+    .grid-container header, main, aside, footer {
+        background-color: #2a2223;
+    }
+
+    .header, .content, .sidebar {
+        color: #dacacc;
+    }
+}
